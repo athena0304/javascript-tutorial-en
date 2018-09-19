@@ -31,15 +31,15 @@ map.set('1', 'str1');   // 字符串作为 key
 map.set(1, 'num1');     // 数字作为 key
 map.set(true, 'bool1'); // 布尔值作为 key
 
-// 还记得普通对象 Object 吗？它将会吧所有的键转化为字符串类型
-// 但是 Map 将会保留键的类型，所以下面这两个是不同的：
+// 还记得普通对象 Object 吗？它将会把所有的键转化为字符串类型
+// 但是 Map 会保留键的类型，所以下面这两个是不同的：
 alert( map.get(1)   ); // 'num1'
 alert( map.get('1') ); // 'str1'
 
 alert( map.size ); // 3
 ```
 
-正如我们所见，不像普通对象，键并没有被转化为字符串。任何类型的键都是可以的。
+正如我们所见，不像普通对象那样，键并没有被转化为字符串。任何类型的键都是可以的。
 
 **Map 可以使用对象作为键。**
 
@@ -75,14 +75,14 @@ alert( visitsCounts[john.id] ); // 123
 ...但是 `Map` 的写法更加优雅。
 
 
-```smart header="How `Map` compares keys"
+```smart header="`Map` 是怎样比较键的"
 为了检测值是否相等，`Map` 使用了算法 [SameValueZero](https://tc39.github.io/ecma262/#sec-samevaluezero)。它大概就和严格等于号 `===` 相同，但区别是 `NaN` 等于 `NaN`。所以 `NaN` 也可以作为键。
 
 该算法不能更改或用户定制。
 ```
 
 
-````smart header="Chaining"
+````smart header="链式调用"
 
 每次 `map.set` 的调用将会返回 map 自身，所以可以链式调用：
 
